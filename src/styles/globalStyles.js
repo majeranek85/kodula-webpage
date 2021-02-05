@@ -1,4 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
+import './normalize.css';
+import '@fontsource/lato';
+import '@fontsource/orbitron';
 
 const GlobalStyle = createGlobalStyle`
 
