@@ -11,18 +11,37 @@ const Button = ({children, ...props}) => {
 
 export default Button;
 
-/* Style  default = outlined, secondary color*/
+/* BUTTON STYLES */
+
+/* light = changes color to light for darker backgrounds */
+
+/* Mixins */
+
+const gradient = color => (
+  css`
+    background-image: linear-gradient(90deg, ${color} 50%, transparent 50%)
+  `
+);
+
+const social = css`
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+`
+
+/* default = outlined, secondary color */
 
 const StyledButton = styled.button`
-  width: 244px;
+  padding: 0 1em;
   height: 56px;
   font-family: orbitron;
   text-transform: uppercase;
-  border: 3px solid ${theme.secondary};
   border-radius: 8px;
-  background: ${theme.light};
-  color: ${theme.secondary};
-  background-image: linear-gradient(90deg, ${theme.secondary} 50%, transparent 50%);
+  background: ${props => props.light ? theme.secondary : theme.light};
+  color: ${props => props.light ? theme.light : theme.secondary};
+  border: 3px solid ${props => props.light ? theme.light : theme.secondary};
+  ${props => props.light ? gradient(theme.light) : gradient(theme.secondary)};
   background-position: 100% 0;
   background-size: 300%;
   line-height: 30px;
@@ -34,22 +53,10 @@ const StyledButton = styled.button`
 
   :hover {
     background-position: 0 100%;
-    color: ${theme.light};
+    color: ${props => props.light ? theme.secondary : theme.light};
   }
 
-  /* Style light = outlined, light color */
+  /* social = outlined, round, secondary color */
 
-  ${props => props.light && css`
-    border: 3px solid ${theme.light};
-    background: transparent;
-    color: ${theme.light};
-    background-image: linear-gradient(90deg, ${theme.light} 50%, transparent 50%);
-    background-position: 100% 0;
-    background-size: 300%;
-
-    :hover {
-    background-position: 0 100%;
-    color: ${theme.secondary};
-  }
-  `}
+  ${props => props.social && social}
 `

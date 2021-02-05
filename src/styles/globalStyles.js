@@ -2,6 +2,7 @@ import {createGlobalStyle} from 'styled-components';
 import './normalize.css';
 import '@fontsource/lato';
 import '@fontsource/orbitron';
+import theme from '../utils/theme'
 
 const GlobalStyle = createGlobalStyle`
 
@@ -13,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    //background: gray;
+    //background: ${theme.secondary};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
