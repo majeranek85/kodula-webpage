@@ -13,22 +13,7 @@ export default Button;
 
 /* BUTTON STYLES */
 
-/* light = changes color to light for darker backgrounds */
-
-/* Mixins */
-
-const gradient = color => (
-  css`
-    background-image: linear-gradient(90deg, ${color} 50%, transparent 50%)
-  `
-);
-
-const social = css`
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  overflow: hidden;
-`
+/* light = props that changes color to light for darker backgrounds */
 
 /* default = outlined, secondary color */
 
@@ -59,4 +44,17 @@ const StyledButton = styled.button`
   /* social = outlined, round, secondary color */
 
   ${props => props.social && social}
+`
+/* Mixins */
+
+const gradient = color =>
+  css`
+    background-image: linear-gradient(90deg, ${color} 50%, transparent 50%)
+  `
+
+const social = css`
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
 `

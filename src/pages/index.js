@@ -1,8 +1,10 @@
 import React from 'react';
 import Layout from '../components/layout';
-import Button from '../components/common/button'
+import Button from '../components/common/button';
+import Tabs from '../components/common/tabs'
 
 export default function Home() {
+
   return (
     <Layout>
       <h1>Hello world</h1>
@@ -19,6 +21,31 @@ export default function Home() {
       </ul>
 
       <Button> zamawiam </Button>
+      <Button light> zamawiam </Button>
+      <Button social> f </Button>
+      <Button social light> In </Button>
+
+      <Tabs>
+        
+      </Tabs>
+
     </Layout>
   );
 }
+
+/* DATA */
+
+const services = [
+  {
+    name: 'strony internetowe',
+    description: 'Lorem ipsum Strony internetowe'
+  },
+  {
+    name: 'pozycjonowanie',
+    description: 'Lorem ipsum Pozycjonowanie'
+  },
+  {
+    name: 'social media',
+    description: 'Lorem ipsum Social media'
+  }
+]
