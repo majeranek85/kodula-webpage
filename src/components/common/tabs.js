@@ -1,87 +1,82 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import theme from '../../utils/theme'
+import theme from '../../utils/theme';
 
-/* DATA */
-
-const services = [
-  {
-    name: 'strony internetowe',
-    description: 'Lorem ipsum Strony internetowe'
-  },
-  {
-    name: 'pozycjonowanie',
-    description: 'Lorem ipsum Pozycjonowanie'
-  },
-  {
-    name: 'social media',
-    description: 'Lorem ipsum Social media'
-  }
-]
-
-const Tabs = () => {
-  const [activeTab, setActiveTab] = useState(services[0].name);
-
+const Tabs = ({ children }) => {
+  const [activeTab, setActiveTab] = useState(children[0].props.label);
 
   const handleClick = (e, newActiveTab) => {
     e.preventDefault();
     setActiveTab(newActiveTab);
-  }
-
+  };
 
   return (
-    <>
-      <ul>
-        {services.map( service => (
-          <Tab
-            key={service.name}
-            className={service.name === activeTab ? 'active' : ''}
-            onClick={e => handleClick(e, service.name)}
-          >
-            {service.name}
+    <StyledTabs className="tabs">
+      <TabsList className="tabs__tab-list">
+        {children.map((tab) => (
+          <Tab as="button" className={tab.props.label === activeTab ? 'tabs__tab tabs__tab--active' : 'tabs__tab'} key={tab.props.label} onClick={(e) => handleClick(e, tab.props.label)}>
+            {tab.props.label}
           </Tab>
-        ))
-        }
-      </ul>
+        ))}
+      </TabsList>
 
-      {services.map( service => {
-        if (service.name === activeTab)
-        return (
-          <Content key={service.name} label={service.name}>
-            <h2>{service.name}</h2>
-            <p>{service.description}</p>
-          </Content>
-        );
-      })
-      }
-    </>
+      {children.map((one) => {
+        if (activeTab === one.props.label) {
+          return (
+            <Content className="tabs__tab-content" key={one.props.label}>
+              {one.props.children}
+            </Content>
+          );
+        }
+      })}
+    </StyledTabs>
   );
-}
+};
 
 export default Tabs;
 
 /* TABS STYLE */
+const StyledTabs = styled.div`
+  width: 80vw;
+  margin: 0 auto;
+`;
 
-const Tab = styled.button`
+const TabsList = styled.ul`
+  border-bottom: 3px solid ${theme.secondary};
+  display: flex;
+  justify-content: center;
+`;
+
+const Tab = styled.li`
   height: 56px;
+  margin: 0 0.2em;
   padding: 0 1em;
   color: ${theme.secondary};
   cursor: pointer;
-  opacity: 0.6;
-
   border: 0;
+  opacity: 0.6;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: opacity 300ms, top 300ms;
 
+  &:focus {
+    outline: thin dotted;
+  }
 
-  &.active {
-    border-bottom: 2px solid black;
+  &:hover {
     opacity: 1;
+  }
+
+  &.tabs__tab--active {
+    opacity: 1;
+    background: ${theme.light};
+    border: 3px solid ${theme.secondary};
+    border-bottom: 0;
+    position: relative;
+    top: 3px;
   }
 `;
 
-const Content = styled.div`
-  opacity: 1;
-
-  .active {
-    opacity: 1;
-  }
+const Content = styled.article`
+  padding: 2em;
 `;
