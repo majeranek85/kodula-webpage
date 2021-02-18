@@ -1,8 +1,8 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import './normalize.css';
 import '@fontsource/lato';
 import '@fontsource/orbitron';
-import theme from '../utils/theme'
+import theme from '../utils/theme';
 
 const GlobalStyle = createGlobalStyle`
 
