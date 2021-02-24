@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import theme from '../../utils/theme';
+import {breakpoints} from '../../utils/breakpoints'
 
 const Tabs = ({ children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
@@ -42,21 +43,25 @@ const StyledTabs = styled.div`
 `;
 
 const TabsList = styled.ul`
-  border-bottom: 3px solid ${theme.secondary};
   display: flex;
   justify-content: center;
+  flex-direction: column;
+
+  @media ${breakpoints.md} {
+    border-bottom: 3px solid ${theme.secondary};
+    flex-direction: row;
+  }
 `;
 
 const Tab = styled.li`
   height: 56px;
-  margin: 0 0.2em;
+  margin: 0.2em 0.2em;
   padding: 0 1em;
   color: ${theme.secondary};
   cursor: pointer;
   border: 0;
   opacity: 0.6;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-radius: 8px;
   transition: opacity 300ms, top 300ms;
 
   &:focus {
@@ -71,9 +76,18 @@ const Tab = styled.li`
     opacity: 1;
     background: ${theme.light};
     border: 3px solid ${theme.secondary};
-    border-bottom: 0;
-    position: relative;
-    top: 3px;
+  }
+
+  @media ${breakpoints.md} {
+    margin: 0 0.2em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &.tabs__tab--active {
+      border-bottom: 0;
+      position: relative;
+      top: 3px;
+    }
   }
 `;
 
