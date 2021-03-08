@@ -13,4 +13,5 @@ const StyledLogo = styled.span`
   color: ${theme.text};
   font-weight: 700;
   font-size: 1.5rem;
+  width: 30rem;
 `;
