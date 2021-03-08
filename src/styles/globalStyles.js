@@ -76,6 +76,10 @@ const GlobalStyle = createGlobalStyle`
   button {
     padding: 0;
     cursor: pointer;
+
+    &:focus {
+      outline: thin dotted;
+    }
   }
 
   ul {
@@ -91,6 +95,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     display: inline-block;
     text-align: center;
+
+    &:focus {
+      outline: thin dotted;
+    }
   }
 `;
 
