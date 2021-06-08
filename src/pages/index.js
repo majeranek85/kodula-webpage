@@ -2,6 +2,8 @@ import React from 'react';
 import Layout from '../components/layout';
 //import Button from '../components/common/button';
 import Tabs from '../components/common/tabs';
+import Splash from '../components/sections/splash'
+import TimePriceDetails from '../components/sections/timePriceDetails';
 
 /* DATA */
 const services = [
@@ -22,6 +24,8 @@ const services = [
 const Home = () => {
   return (
     <Layout>
+      <Splash/>
+      <TimePriceDetails/>
       {/*<Tabs>
         {services.map((service) => (
           <article key={service.name} label={service.name}>
