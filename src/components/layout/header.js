@@ -4,16 +4,13 @@ import { breakpoints } from '../../utils/breakpoints';
 import theme from '../../utils/theme';
 import Logo from '../common/logo';
 import MainMenu from '../features/mainMenu';
-import Container from '../layout/container'
 
 const Header = () => {
   return (
-    <Container>
       <StyledHeader>
         <Logo className='logo' title='KODULA'/>
         <MainMenu />
       </StyledHeader>
-    </Container>
   )
 }
 
@@ -22,7 +19,7 @@ export default Header;
 const StyledHeader = styled.header`
   display: flex;
   background: ${theme.light};
-  padding: 1em;
+  padding: 1em 0;
   //width: 100vw;
   //flex-direction: column;
   position: relative;
