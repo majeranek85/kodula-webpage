@@ -26,14 +26,6 @@ const Home = () => {
     <Layout>
       <Splash/>
       <TimePriceDetails/>
-      {/*<Tabs>
-        {services.map((service) => (
-          <article key={service.name} label={service.name}>
-            <h2>{service.name}</h2>
-            <p>{service.description}</p>
-          </article>
-        ))}
-      </Tabs>*/}
     </Layout>
   );
 }
