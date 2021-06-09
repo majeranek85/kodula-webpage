@@ -98,15 +98,15 @@ const StyledMenu = styled.nav`
     margin: 0;
     display: flex;
     justify-content: end;
+    border-bottom: 5px solid ${theme.secondaryLight};
 
     ul {
       display: flex;
-      justify-content: space-between;
+      justify-content: end;
       width: 100%;
-      border-bottom: 5px solid ${theme.secondaryLight};
 
       li {
-        margin: 0.6rem 0;
+        margin: 0.6rem 3rem;
         padding: auto;
       }
     }
