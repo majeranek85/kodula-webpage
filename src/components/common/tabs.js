@@ -28,7 +28,7 @@ const Tabs = ({ children }) => {
               {one.props.children}
             </Content>
           );
-        }
+        } else {return null}
       })}
     </StyledTabs>
   );
