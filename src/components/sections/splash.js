@@ -1,15 +1,37 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import Section from '../layout/section'
+import { breakpoints } from '../../utils/breakpoints';
+import Section from '../layout/section';
+import Button from '../common/button'
+import theme from '../../utils/theme';
 
 const Splash = () => {
   return (
-    <Section>
-      <StyledImage>Image</StyledImage>
-      <StyledText>
-        <h1> TWORZENIE STRON INTERNETOWYCH </h1>
-      </StyledText>
-      
+    <Section ClassName='splash'>
+      <Container fluid>
+        <Row>
+          <Col xs={{ order: 2 }} md={6}>
+            <StyledImage>Image</StyledImage>
+          </Col>
+          <Col xs={{ order: 1 }} md={6} md={{ order: 2 }}>
+            <StyledText>
+              <h1> TWORZENIE STRON INTERNETOWYCH </h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adiscing elit.</p>
+              <p>Facilisis dui lacus mauris eu magna lectus sit ligula.</p>
+              {document.documentElement.clientWidth > 768
+                ? <Button className='btn'>Zamawiam</Button> : ''
+              }
+            </StyledText>
+          </Col>
+          {document.documentElement.clientWidth < 768
+            ? <Col xs={{ order: 3 }} md={0}>
+              <Button>Zamawiam</Button>
+            </Col>
+            : ''
+          }
+        </Row>
+      </Container>
     </Section>
   )
 }
@@ -17,8 +39,60 @@ const Splash = () => {
 export default Splash;
 
 const StyledImage = styled.div`
-  flex: 40%;
+  height: 250px;
+  width: 250px;
+  background: lightgray;
+
+  @media ${breakpoints.md} {
+    width: 700px;
+    height: 700px;
+  }
 `;
+
 const StyledText = styled.div`
-  flex: 60%;
+
+  h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    position: relative;
+
+    ::after{
+      position: absolute;
+      content:'';
+      background: ${theme.secondaryLight};
+      width: 92px;               ;
+      height: 5px;
+      bottom: -20px;
+      left: 0;
+    }
+  }
+
+  p {
+    font-family: 'Orbitron';
+    font-size: 1.12rem;
+  };
+
+  .btn {
+    margin-top: 2rem;
+  }
+
+  @media ${breakpoints.md} {
+    h1 {
+      font-size: 3.2rem;
+
+      ::after{
+      width: 267px;
+    }
+    };
+
+    p {
+      font-size: 1.75rem;
+      padding-left: 4rem;
+    };
+
+    .btn {
+      margin-top: 5rem;
+    }
+  }
 `;

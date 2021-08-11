@@ -36,12 +36,12 @@ const MainMenu = () => {
   const [menuOpen, toggleMenuOpen] = useState(false);
 
   return (
-    <Container>
+    <Container fluid>
       <Row>
-        <Col xs={10} md={3} style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <Col xs={10} md={3} >
           <Logo className='logo' title='KODULA' />
         </Col>
-        <Col xs={2} md={{ order: 3 }} style={{ paddingLeft: 0, paddingRight: 0, display: 'flex', justifyContent: 'flex-end' }}>
+        <Col xs={2} md={{ order: 3 }} style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <Hamburger menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)}>
             <span></span>
             <span></span>

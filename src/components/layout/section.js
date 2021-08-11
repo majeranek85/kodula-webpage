@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
+import { breakpoints } from '../../utils/breakpoints';
 
-const Section = ({children}) => {
+const Section = ({ children }) => {
   return (
     <StyledSection>
       {children}
@@ -13,6 +14,9 @@ export default Section;
 
 const StyledSection = styled.section`
   display: flex;
-  justify-content: space-between;
-  margin-top: 3rem;
+  margin: 1rem 2rem;
+
+  @media ${breakpoints.md} {
+    margin: 2rem 5rem;
+  }
 `;

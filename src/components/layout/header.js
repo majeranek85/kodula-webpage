@@ -18,12 +18,13 @@ export default Header;
 
 const StyledHeader = styled.header`
   background: ${theme.light};
-  margin: 0 30px;
+  margin: 0 2rem;
   position: relative;
   z-index: 999;
   border-bottom: 5px solid ${theme.secondaryLight};
 
   @media ${breakpoints.md} {
     border-bottom: 0;
+    margin: 0 5rem;
   }
 `;
