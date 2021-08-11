@@ -11,7 +11,7 @@ const Section = ({children}) => {
 
 export default Section;
 
-const StyledSection = styled.div`
+const StyledSection = styled.section`
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;

@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 //import {Link} from 'gatsby';
 import styled from 'styled-components';
 import { breakpoints } from '../../utils/breakpoints';
 import theme from '../../utils/theme';
+import Logo from '../common/logo';
 
 /* DATA */
 
@@ -34,23 +36,32 @@ const MainMenu = () => {
   const [menuOpen, toggleMenuOpen] = useState(false);
 
   return (
-    <>
-      <Hamburger menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)}>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </Hamburger>
-      <StyledMenu menuOpen={menuOpen}>
-        <ul>
-        {menu.map((item) => (
-          <li key={item.label}>
-            <a href={item.slug} className={item.active}>{item.label}</a>
-          </li>
-          ))}
-        </ul>
-      </StyledMenu>
-    </>
+    <Container>
+      <Row>
+        <Col xs={10} md={3} style={{ paddingLeft: 0, paddingRight: 0 }}>
+          <Logo className='logo' title='KODULA' />
+        </Col>
+        <Col xs={2} md={{ order: 3 }} style={{ paddingLeft: 0, paddingRight: 0, display: 'flex', justifyContent: 'flex-end' }}>
+          <Hamburger menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </Hamburger>
+        </Col>
+        <Col xs={12} md={9}>
+          <StyledMenu menuOpen={menuOpen}>
+            <ul>
+              {menu.map((item) => (
+                <li key={item.label}>
+                  <a href={item.slug} className={item.active}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </StyledMenu>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
@@ -58,14 +69,14 @@ export default MainMenu;
 
 const StyledMenu = styled.nav`
   background: ${theme.light};
-  width: 100vw;
+  width: 100%;
   padding: 3em;
-  margin-top: 1em;
+  //margin-top: 1em;
   position: absolute;
   transition: left 600ms ease-in-out, opacity 300ms;
   left: ${({ menuOpen }) => (menuOpen ? `0` : `-100vw`)};
   opacity: ${({ menuOpen }) => (menuOpen ? `1` : `0`)};
-  top: 3em;
+  //top: 3em;
   border-top: 5px solid ${theme.secondaryLight};
 
   ul {
@@ -80,6 +91,12 @@ const StyledMenu = styled.nav`
       a {
         text-transform: uppercase;
         color: ${theme.text};
+        font-weight: 400;
+
+        &:hover {
+          text-decoration: none;
+          color: ${theme.primary};
+        }
 
         &.active {
           color: ${theme.primary};
@@ -103,11 +120,11 @@ const StyledMenu = styled.nav`
     ul {
       display: flex;
       justify-content: end;
-      width: 100%;
+      //width: 100%;
 
       li {
-        margin: 0.6rem 3rem;
-        padding: auto;
+        margin: 2rem 0 0.6rem 3rem;
+        //padding: auto;
       }
     }
   }
@@ -117,7 +134,9 @@ const Hamburger = styled.button`
   background: ${theme.light};
   border: none;
   width: 30px;
-  margin-left: auto;
+  height: 82px;
+  //margin-right: 10px;
+  //margin-left: auto;
 
   span {
     height: 3px;
