@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
+import Services from '../components/sections/services';
 //import Button from '../components/common/button';
 //import Tabs from '../components/common/tabs';
 import Splash from '../components/sections/splash'
@@ -26,6 +27,7 @@ const Home = () => {
     <Layout>
       <Splash />
       <TimePriceDetails />
+      <Services/>
     </Layout>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import theme from '../../utils/theme';
 import {breakpoints} from '../../utils/breakpoints'
@@ -24,9 +25,12 @@ const Tabs = ({ children }) => {
       {children.map((one) => {
         if (activeTab === one.props.label) {
           return (
-            <Content className="tabs__tab-content" key={one.props.label}>
+            <Container>
+              <Content className="tabs__tab-content" key={one.props.label}>
               {one.props.children}
             </Content>
+            </Container>
+            
           );
         } else {return null}
       })}
@@ -40,6 +44,10 @@ export default Tabs;
 const StyledTabs = styled.div`
   width: 80vw;
   margin: 0 auto;
+
+  @media ${breakpoints.md} {
+    width: 100vw;
+  }
 `;
 
 const TabsList = styled.ul`
@@ -92,5 +100,5 @@ const Tab = styled.li`
 `;
 
 const Content = styled.article`
-  padding: 2em;
+  padding: 2em 0;
 `;

@@ -71,12 +71,10 @@ const StyledMenu = styled.nav`
   background: ${theme.light};
   width: 100%;
   padding: 3em;
-  //margin-top: 1em;
   position: absolute;
   transition: left 600ms ease-in-out, opacity 300ms;
   left: ${({ menuOpen }) => (menuOpen ? `0` : `-100vw`)};
   opacity: ${({ menuOpen }) => (menuOpen ? `1` : `0`)};
-  //top: 3em;
   border-top: 5px solid ${theme.secondaryLight};
 
   ul {
@@ -114,17 +112,15 @@ const StyledMenu = styled.nav`
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     border-bottom: 5px solid ${theme.secondaryLight};
 
     ul {
       display: flex;
       justify-content: end;
-      //width: 100%;
 
       li {
         margin: 2rem 0 0.6rem 3rem;
-        //padding: auto;
       }
     }
   }
@@ -135,8 +131,6 @@ const Hamburger = styled.button`
   border: none;
   width: 30px;
   height: 82px;
-  //margin-right: 10px;
-  //margin-left: auto;
 
   span {
     height: 3px;

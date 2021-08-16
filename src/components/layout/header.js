@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 //import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { breakpoints } from '../../utils/breakpoints';
@@ -8,9 +9,15 @@ import MainMenu from '../features/mainMenu';
 
 const Header = () => {
   return (
-    <StyledHeader>
-      <MainMenu />
-    </StyledHeader>
+
+    <Container fluid>
+      <StyledHeader>
+
+<MainMenu />
+
+</StyledHeader>
+    </Container>
+    
   )
 }
 
@@ -25,6 +32,6 @@ const StyledHeader = styled.header`
 
   @media ${breakpoints.md} {
     border-bottom: 0;
-    margin: 0 5rem;
+    margin: 0 3rem;
   }
 `;
