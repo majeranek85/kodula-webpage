@@ -14,7 +14,7 @@ const Splash = () => {
           <Col xs={{ order: 2 }} md={6}>
             <StyledImage>Image</StyledImage>
           </Col>
-          <Col xs={{ order: 1 }} md={6} md={{ order: 2 }}>
+          <Col xs={{ order: 1 }} md={{ span: 6, order: 2 }} >
             <StyledText>
               <h1> TWORZENIE STRON INTERNETOWYCH </h1>
               <p>Lorem ipsum dolor sit amet, consectetur adiscing elit.</p>
@@ -25,9 +25,9 @@ const Splash = () => {
             </StyledText>
           </Col>
           {document.documentElement.clientWidth < 768
-            ? <Col xs={{ order: 3 }} md={0}>
-              <Button>Zamawiam</Button>
-            </Col>
+            ? <StyledBtn xs={{ order: 3 }} md={0}>
+                <Button>Zamawiam</Button>
+              </StyledBtn>
             : ''
           }
         </Row>
@@ -42,6 +42,7 @@ const StyledImage = styled.div`
   height: 250px;
   width: 250px;
   background: lightgray;
+  margin: 1rem auto;
 
   @media ${breakpoints.md} {
     width: 700px;
@@ -56,6 +57,7 @@ const StyledText = styled.div`
     font-weight: bold;
     margin-bottom: 3rem;
     position: relative;
+    letter-spacing: 2px;
 
     ::after{
       position: absolute;
@@ -82,8 +84,8 @@ const StyledText = styled.div`
       font-size: 3.2rem;
 
       ::after{
-      width: 267px;
-    }
+        width: 267px;
+      }
     };
 
     p {
@@ -92,7 +94,11 @@ const StyledText = styled.div`
     };
 
     .btn {
-      margin-top: 5rem;
+      margin-top: 4rem;
     }
   }
+`;
+const StyledBtn = styled(Col)`
+  display: flex;
+  justify-content: center;
 `;

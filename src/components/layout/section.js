@@ -17,6 +17,6 @@ const StyledSection = styled.section`
   margin: 1rem 2rem;
 
   @media ${breakpoints.md} {
-    margin: 2rem 5rem;
+    margin: 5rem 5rem;
   }
 `;
