@@ -53,7 +53,7 @@ const StyledImage = styled.div`
 const StyledText = styled.div`
 
   h1 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: bold;
     margin-bottom: 3rem;
     position: relative;
@@ -81,8 +81,7 @@ const StyledText = styled.div`
 
   @media ${breakpoints.md} {
     h1 {
-      font-size: 3.2rem;
-
+      font-size: 3.25rem;
       ::after{
         width: 267px;
       }
@@ -91,6 +90,7 @@ const StyledText = styled.div`
     p {
       font-size: 1.75rem;
       padding-left: 4rem;
+      padding-right: 4rem;
     };
 
     .btn {

@@ -10,12 +10,12 @@ const TimePriceDetails = () => {
       <Container>
         <Row>
           <StyledCol md={6}>
-            <h4>ILE KOSZTUJE STRONA?</h4>
+            <h2>ILE KOSZTUJE STRONA?</h2>
             <p>Strona HTML - <span>od 1000zł</span></p>
             <p>Strona z CMS - <span>od 1600zł</span></p>
           </StyledCol>
           <StyledCol md={6}>
-            <h4>JAKI JEST CZAS REALIZACJI?</h4>
+            <h2>JAKI JEST CZAS REALIZACJI?</h2>
             <p>Strona HTML - <span>do 4 dni</span></p>
             <p>Strona z CMS - <span>do 7 dni</span></p>
           </StyledCol>
@@ -30,9 +30,8 @@ export default TimePriceDetails;
 const StyledCol = styled(Col)`
   margin-top: 1rem;
 
-  h4 {
+  h2 {
     margin-bottom: 1rem;
-    font-weight: bold;
   }
 
   p {

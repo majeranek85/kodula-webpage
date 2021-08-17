@@ -48,10 +48,10 @@ const GlobalStyle = createGlobalStyle`
 
   /* Type will scale with modules */
   h1 {
-    font-size: 3em;
+    font-size: 3.25em;
   }
   h2 {
-    font-size: 2.5em;
+    font-size: 1.5em;
   }
   h3 {
     font-size: 2em;
@@ -70,7 +70,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4, h5 {
     font-family: orbitron;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   button {

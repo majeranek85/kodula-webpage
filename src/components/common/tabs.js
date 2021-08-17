@@ -27,10 +27,9 @@ const Tabs = ({ children }) => {
           return (
             <Container>
               <Content className="tabs__tab-content" key={one.props.label}>
-              {one.props.children}
-            </Content>
+                {one.props.children}
+              </Content>
             </Container>
-            
           );
         } else {return null}
       })}
