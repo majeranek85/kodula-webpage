@@ -4,12 +4,15 @@ import GlobalStyle from '../styles/globalStyles';
 import colors from '../utils/colors';
 import Header from '../components/layout/header'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Element } from 'react-scroll';
 
 const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={colors}>
       <GlobalStyle />
-      <Header/>
+      <Element name='home'>
+        <Header/>
+      </Element>
       {children}
     </ThemeProvider>
   );

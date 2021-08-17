@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { breakpoints } from '../../utils/breakpoints';
 import theme from '../../utils/theme';
 import Logo from '../common/logo';
+import { Link } from 'react-scroll';
 
 /* DATA */
 
@@ -13,18 +14,22 @@ const menu = [
     label: 'home',
     slug: '/',
     active: 'active',
+    section:'home'
   },
   {
     label: 'oferta',
     slug: '/oferta',
+    section:'services'
   },
   {
     label: 'portfolio',
     slug: '/portfolio',
+    section: 'our-work'
   },
   {
     label: 'kontakt',
     slug: '/kontakt',
+    section: 'contact'
   },
   {
     label: 'styleguide',
@@ -54,7 +59,7 @@ const MainMenu = () => {
             <ul>
               {menu.map((item) => (
                 <li key={item.label}>
-                  <a href={item.slug} className={item.active}>{item.label}</a>
+                  <Link to={item.section} smooth={true} offset={-50} href={item.slug} className={item.active}>{item.label}</Link>
                 </li>
               ))}
             </ul>

@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../utils/breakpoints';
 import theme from '../../utils/theme';
+import { Link } from 'react-scroll';
 
 const Logo = ({ title, ...props }) =>
   <StyledLogo {...props}>
-    <a href='/'>{title}</a>
+    <Link to='home' href='/'>{title}</Link>
   </StyledLogo>
 
 export default Logo;
