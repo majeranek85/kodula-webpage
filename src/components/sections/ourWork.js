@@ -33,8 +33,8 @@ const OurWork = () => {
       <Container>
         <StyledTitle>NASZE REALIZACJE</StyledTitle>
         <Row>
-          {data.map((item) => (
-            <Col xs={12} md={4}>
+          {data.map((item, id) => (
+            <Col xs={12} md={4} key={id}>
               <StyledFigure>
                 <img src={item.url} alt={item.alt}/>
                 <figcaption>{item.name}</figcaption>
@@ -61,5 +61,5 @@ const StyledFigure = styled.figure`
 `;
 
 const StyledBtn = styled(Button)`
-  margin: 0 auto;
+  margin: 3rem auto;
 `;
