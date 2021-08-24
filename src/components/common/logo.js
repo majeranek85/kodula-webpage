@@ -1,27 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../utils/breakpoints';
-import theme from '../../utils/theme';
-import { Link } from 'react-scroll';
+import { Link, animateScroll as scroll } from 'react-scroll';
+import logo from "../../images/logo.svg";
+import smallLogo from '../../images/logo-small.svg'
 
-const Logo = ({ title, ...props }) =>
+const toggleHome = () => {
+  scroll.scrollToTop();
+};
+
+const Logo = ({...props }) =>
   <StyledLogo {...props}>
-    <Link to='home' href='/'>{title}</Link>
+    <Link to='/' onClick={toggleHome}>
+      <img src={document.documentElement.clientWidth < 768 ? smallLogo : logo} alt='logo'/>
+    </Link>
   </StyledLogo>
 
 export default Logo;
 
 const StyledLogo = styled.div`
-  background: lightgray;
-  color: ${theme.text};
-  font-weight: 700;
-  font-size: 2.5rem;
-  width: 190px;
-  height: 82px;
-  text-align: center;
 
   @media ${breakpoints.md} {
-    width: 100%;
-    height: 100%;
+   a {
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
   }
 `;

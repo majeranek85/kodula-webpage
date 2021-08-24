@@ -2,9 +2,9 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { breakpoints } from '../../utils/breakpoints';
-import Section from '../layout/section';
 import Button from '../common/button'
 import theme from '../../utils/theme';
+import Section from '../layout/section';
 
 const Splash = () => {
   return (
@@ -12,7 +12,9 @@ const Splash = () => {
       <Container fluid>
         <Row>
           <Col xs={{ order: 2 }} md={6}>
-            <StyledImage>Image</StyledImage>
+            <StyledImage>
+              <img src={'../../splashimg.jpg'} alt='splash'/>
+            </StyledImage>
           </Col>
           <Col xs={{ order: 1 }} md={{ span: 6, order: 2 }} >
             <StyledText>
@@ -38,11 +40,22 @@ const Splash = () => {
 
 export default Splash;
 
+// const StyledSection = styled.section`
+//   //margin: 7rem 2rem 0rem 2rem;
+// `;
+
+
+
 const StyledImage = styled.div`
   height: 250px;
   width: 250px;
   background: lightgray;
-  margin: 1rem auto;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 
   @media ${breakpoints.md} {
     width: 700px;
@@ -55,6 +68,7 @@ const StyledText = styled.div`
   h1 {
     font-size: 1.7rem;
     font-weight: bold;
+    margin-top: 3rem;
     margin-bottom: 3rem;
     position: relative;
     letter-spacing: 2px;
