@@ -5,6 +5,7 @@ import { breakpoints } from '../../utils/breakpoints';
 import Button from '../common/button'
 import theme from '../../utils/theme';
 import Section from '../layout/section';
+import HeroImg from '../../images/splashimg.jpg'
 
 const Splash = () => {
   return (
@@ -13,7 +14,7 @@ const Splash = () => {
         <Row>
           <Col xs={{ order: 2 }} md={6}>
             <StyledImage>
-              <img src={'../../splashimg.jpg'} alt='splash'/>
+              <img src={HeroImg} alt='hero image'/>
             </StyledImage>
           </Col>
           <Col xs={{ order: 1 }} md={{ span: 6, order: 2 }} >
