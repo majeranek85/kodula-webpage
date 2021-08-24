@@ -40,14 +40,18 @@ const menu = [
 const MainMenu = () => {
   const [menuOpen, toggleMenuOpen] = useState(false);
 
+  const toggle = () => {
+    toggleMenuOpen(!menuOpen)
+  }
+
   return (
     <Container fluid>
       <Row>
         <Col xs={10} md={3} >
-          <Logo className='logo' title='KODULA' />
+          <Logo className='logo' />
         </Col>
         <Col xs={2} md={{ order: 3 }} style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <Hamburger menuOpen={menuOpen} onClick={() => toggleMenuOpen(!menuOpen)}>
+          <Hamburger menuOpen={menuOpen} onClick={toggle}>
             <span></span>
             <span></span>
             <span></span>
@@ -59,7 +63,7 @@ const MainMenu = () => {
             <ul>
               {menu.map((item) => (
                 <li key={item.label}>
-                  <Link to={item.section} smooth={true} offset={-50} href={item.slug} className={item.active}>{item.label}</Link>
+                  <Link to={item.section} onClick={toggle} smooth={true} offset={-82} hashSpy spy={true} /*href={item.slug}*/  /*className={item.active}*/ >{item.label}</Link>
                 </li>
               ))}
             </ul>
