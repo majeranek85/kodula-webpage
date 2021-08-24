@@ -25,8 +25,8 @@ const Tabs = ({ children }) => {
       {children.map((one) => {
         if (activeTab === one.props.label) {
           return (
-            <Container>
-              <Content className="tabs__tab-content" key={one.props.label}>
+            <Container key={one.props.label}>
+              <Content className="tabs__tab-content" >
                 {one.props.children}
               </Content>
             </Container>
@@ -43,10 +43,6 @@ export default Tabs;
 const StyledTabs = styled.div`
   width: 80vw;
   margin: 0 auto;
-
-  @media ${breakpoints.md} {
-    width: 100vw;
-  }
 `;
 
 const TabsList = styled.ul`
