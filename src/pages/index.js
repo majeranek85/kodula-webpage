@@ -9,7 +9,7 @@ import { Element } from 'react-scroll';
 const Home = () => {
   return (
     <Layout>
-      <Element name='splash'>
+      <Element name='home'>
         <Splash />
         <TimePriceDetails />
       </Element>
