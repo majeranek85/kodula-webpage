@@ -8,8 +8,6 @@ import Section from '../layout/section';
 import HeroImg from '../../images/splashimg.jpg'
 
 const Splash = () => {
-
-
   return (
     <Section paddingBottomNone ClassName='splash'>
       <Container fluid>

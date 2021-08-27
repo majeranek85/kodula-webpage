@@ -28,8 +28,6 @@ const TimePriceDetails = () => {
 export default TimePriceDetails;
 
 const StyledCol = styled(Col)`
-  margin-top: 1rem;
-
   h2 {
     margin-bottom: 1rem;
   }
@@ -39,7 +37,7 @@ const StyledCol = styled(Col)`
 
     span {
       color: ${theme.primary};
-      font-weight: 500;
+      font-weight: 400;
     }
   }
 `

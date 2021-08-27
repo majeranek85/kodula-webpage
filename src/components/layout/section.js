@@ -14,11 +14,12 @@ const Section = ({ children, ...props }) => {
 export default Section;
 
 const StyledSection = styled.section`
-  padding: 5rem 2rem;
-  padding-bottom: ${(props => (props.paddingBottomNone ? '0' : '5rem'))};
+  padding: 5rem 2rem 1rem 2rem;
+  padding-bottom: ${(props => (props.paddingBottomNone ? '0' : '1rem'))};
   background: ${(props) => (props.bgLightSecond ? theme.secondaryLight : 'white')};
 
   @media ${breakpoints.lg} {
     padding: 5rem auto;
+    padding-bottom: ${(props => (props.paddingBottomNone ? '0' : '5rem'))};
   }
 `;
