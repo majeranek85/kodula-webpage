@@ -8,6 +8,8 @@ import Section from '../layout/section';
 import HeroImg from '../../images/splashimg.jpg'
 
 const Splash = () => {
+
+
   return (
     <Section paddingBottomNone ClassName='splash'>
       <Container fluid>
@@ -22,16 +24,12 @@ const Splash = () => {
               <h1> TWORZENIE STRON INTERNETOWYCH </h1>
               <p>Lorem ipsum dolor sit amet, consectetur adiscing elit.</p>
               <p>Facilisis dui lacus mauris eu magna lectus sit ligula.</p>
-              {window.innerWidth > 1200
-                && <Button className='btn'>Zamawiam</Button>
-              }
+              <StyledBtnDesktop className='btn'>Zamawiam</StyledBtnDesktop>
             </StyledText>
           </Col>
-          {window.innerWidth < 1200
-            && <StyledBtn xs={{ order: 3 }} lg={0}>
-                <Button>Zamawiam</Button>
-              </StyledBtn>
-          }
+            <StyledBtnMobile xs={{ order: 3 }}>
+              <Button>Zamawiam</Button>
+            </StyledBtnMobile>
         </Row>
       </Container>
     </Section>
@@ -40,15 +38,8 @@ const Splash = () => {
 
 export default Splash;
 
-// const StyledSection = styled.section`
-//   //margin: 7rem 2rem 0rem 2rem;
-// `;
-
-
 
 const StyledImage = styled.div`
-  /* height: 250px;
-  width: 250px; */
   height: 100%;
   width: 100%;
   background: lightgray;
@@ -59,11 +50,6 @@ const StyledImage = styled.div`
     height: 100%;
     object-fit: cover;
   }
-
-  /* @media ${breakpoints.md} {
-    width: 350px;
-    height: 350px;
-  } */
 
   @media ${breakpoints.lg} {
     max-width: 450px;
@@ -141,7 +127,19 @@ const StyledText = styled.div`
   }
 `;
 
-const StyledBtn = styled(Col)`
+const StyledBtnDesktop = styled(Button)`
+  display: none;
+
+  @media ${breakpoints.lg} {
+    display: block;
+  }
+`;
+
+const StyledBtnMobile = styled(Col)`
   display: flex;
   justify-content: center;
+
+  @media ${breakpoints.lg} {
+    display: none;
+  }
 `;
