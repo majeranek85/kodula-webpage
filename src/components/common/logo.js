@@ -12,7 +12,7 @@ const toggleHome = () => {
 const Logo = ({...props }) =>
   <StyledLogo {...props}>
     <Link to='/' onClick={toggleHome}>
-      <img src={ logo} alt='logo'/>
+      <img src={ logo } alt='logo'/>
     </Link>
   </StyledLogo>
 

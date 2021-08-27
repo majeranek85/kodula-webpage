@@ -5,16 +5,34 @@ import { breakpoints } from '../../utils/breakpoints';
 import Button from '../common/button'
 import theme from '../../utils/theme';
 import Section from '../layout/section';
-import HeroImg from '../../images/splashimg.jpg'
+import { graphql, useStaticQuery } from "gatsby"
+import Img from 'gatsby-image';
+
 
 const Splash = () => {
+
+  const data = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "splashimg.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
+  // console.log(data);
+
+
   return (
-    <Section paddingBottomNone ClassName='splash'>
+    <Section paddingBottomNone fullHeight ClassName='splash'>
       <Container fluid>
         <Row>
           <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
             <StyledImage>
-              <img src={HeroImg} alt='hero'/>
+              <Img fluid={data.image.childImageSharp.fluid} alt='hero'/>
             </StyledImage>
           </Col>
           <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }} >
