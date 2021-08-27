@@ -31,10 +31,11 @@ const menu = [
     slug: '/kontakt',
     section: 'contact'
   },
-  {
-    label: 'styleguide',
-    slug: '/styleguide'
-  }
+  // {
+  //   label: 'styleguide',
+  //   slug: '/styleguide',
+  //   section: 'styleguide'
+  // }
 ]
 
 const MainMenu = () => {
@@ -47,23 +48,23 @@ const MainMenu = () => {
   return (
     <Container fluid>
       <Row>
-        <Col xs={10} md={3} >
+        <Col xs={6} lg={3} >
           <Logo className='logo' />
         </Col>
-        <Col xs={2} md={{ order: 3 }} style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <Hamburger menuOpen={menuOpen} onClick={toggle}>
+        <StyledCol xs={6} lg={{ order: 3 }}>
+          <StyledHamburger menuOpen={menuOpen} onClick={toggle}>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-          </Hamburger>
-        </Col>
-        <Col xs={12} md={9}>
-          <StyledMenu menuOpen={menuOpen}>
+          </StyledHamburger>
+        </StyledCol>
+        <Col xs={12} lg={9}>
+          <StyledMenu onClick={toggle} menuOpen={menuOpen}>
             <ul>
               {menu.map((item) => (
                 <li key={item.label}>
-                  <Link to={item.section} onClick={toggle} smooth={true} offset={-82} hashSpy spy={true} /*href={item.slug}*/  /*className={item.active}*/ >{item.label}</Link>
+                  <Link to={item.section} onClick={toggle} smooth={true} offset={-80} hashSpy spy={true}>{item.label}</Link>
                 </li>
               ))}
             </ul>
@@ -76,6 +77,11 @@ const MainMenu = () => {
 
 export default MainMenu;
 
+const StyledCol = styled(Col)`
+  display: flex;
+  justify-content: flex-end;
+`;
+
 const StyledMenu = styled.nav`
   background: ${theme.light};
   width: 100%;
@@ -85,34 +91,37 @@ const StyledMenu = styled.nav`
   left: ${({ menuOpen }) => (menuOpen ? `0` : `-100vw`)};
   opacity: ${({ menuOpen }) => (menuOpen ? `1` : `0`)};
   border-top: 5px solid ${theme.secondaryLight};
+  border-bottom: 8px dotted ${theme.secondaryLight};
 
   ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     li {
-
       margin-bottom: 1.5em;
-      margin-left: 35%;
-      padding-bottom: 0.5em;
 
       a {
         text-transform: uppercase;
         color: ${theme.text};
         font-weight: 400;
-
-        &:hover {
-          text-decoration: none;
-          color: ${theme.primary};
-        }
+        cursor: pointer;
 
         &.active {
+          color: ${theme.primary};
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        &:not([href]):not([class]):hover {
           color: ${theme.primary};
         }
       }
     }
   }
 
-  @media ${breakpoints.md} {
+  @media ${breakpoints.lg} {
     opacity: 1;
     left: 0;
     top: 0;
@@ -125,21 +134,21 @@ const StyledMenu = styled.nav`
     border-bottom: 5px solid ${theme.secondaryLight};
 
     ul {
-      display: flex;
+      flex-direction: row;
       justify-content: end;
 
       li {
-        margin: 2rem 0 0.6rem 3rem;
+        margin: 2em 0 0.6em 3em;
       }
     }
   }
 `;
 
-const Hamburger = styled.button`
+const StyledHamburger = styled.button`
   background: ${theme.light};
   border: none;
   width: 30px;
-  height: 82px;
+  height: 77px;
 
   span {
     height: 3px;
@@ -164,7 +173,13 @@ const Hamburger = styled.button`
     }
   }
 
-  @media ${breakpoints.md} {
+  &:hover {
+    span {
+      background: ${theme.primary};
+    }
+  }
+
+  @media ${breakpoints.lg} {
     display: none;
   }
 `;

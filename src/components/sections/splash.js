@@ -9,26 +9,26 @@ import HeroImg from '../../images/splashimg.jpg'
 
 const Splash = () => {
   return (
-    <Section ClassName='splash'>
+    <Section paddingBottomNone ClassName='splash'>
       <Container fluid>
         <Row>
-          <Col xs={{ order: 2 }} md={6}>
+          <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
             <StyledImage>
-              <img src={HeroImg} alt='hero image'/>
+              <img src={HeroImg} alt='hero'/>
             </StyledImage>
           </Col>
-          <Col xs={{ order: 1 }} md={{ span: 6, order: 2 }} >
+          <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }} >
             <StyledText>
               <h1> TWORZENIE STRON INTERNETOWYCH </h1>
               <p>Lorem ipsum dolor sit amet, consectetur adiscing elit.</p>
               <p>Facilisis dui lacus mauris eu magna lectus sit ligula.</p>
-              {document.documentElement.clientWidth > 768
+              {document.documentElement.clientWidth > 1200
                 ? <Button className='btn'>Zamawiam</Button> : ''
               }
             </StyledText>
           </Col>
-          {document.documentElement.clientWidth < 768
-            ? <StyledBtn xs={{ order: 3 }} md={0}>
+          {document.documentElement.clientWidth < 1200
+            ? <StyledBtn xs={{ order: 3 }} lg={0}>
                 <Button>Zamawiam</Button>
               </StyledBtn>
             : ''
@@ -48,19 +48,32 @@ export default Splash;
 
 
 const StyledImage = styled.div`
-  height: 250px;
-  width: 250px;
+  /* height: 250px;
+  width: 250px; */
+  height: 100%;
+  width: 100%;
   background: lightgray;
   margin: 0 auto;
 
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
-  @media ${breakpoints.md} {
-    width: 700px;
-    height: 700px;
+  /* @media ${breakpoints.md} {
+    width: 350px;
+    height: 350px;
+  } */
+
+  @media ${breakpoints.lg} {
+    max-width: 450px;
+    max-height: 450px;
+  }
+
+  @media ${breakpoints.xl} {
+    max-width: 700px;
+    max-height: 700px;
   }
 `;
 
@@ -96,23 +109,39 @@ const StyledText = styled.div`
 
   @media ${breakpoints.md} {
     h1 {
-      font-size: 3.25rem;
+      font-size: 2rem;
+    }
+  }
+
+  @media ${breakpoints.lg} {
+    h1 {
+      font-size: 2rem;
       ::after{
         width: 267px;
       }
     };
 
     p {
-      font-size: 1.75rem;
-      padding-left: 4rem;
-      padding-right: 4rem;
+      font-size: 1.5rem;
     };
 
     .btn {
       margin-top: 4rem;
     }
   }
+
+  @media ${breakpoints.xl} {
+    h1 {
+      font-size: 3.25rem;
+    }
+
+    /* p {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    } */
+  }
 `;
+
 const StyledBtn = styled(Col)`
   display: flex;
   justify-content: center;
