@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Section from '../layout/section';
 import styled from 'styled-components';
 import Button from '../common/button';
+//import theme from '../../utils/theme';
 
 /* DATA */
 
@@ -29,7 +30,7 @@ const data = [
 
 const OurWork = () => {
   return (
-    <Section>
+    <Section bgLightSecond>
       <Container>
         <StyledTitle>NASZE REALIZACJE</StyledTitle>
         <Row>
@@ -50,6 +51,7 @@ const OurWork = () => {
 
 export default OurWork;
 
+
 const StyledTitle = styled.h2`
   margin-bottom: 2rem;
 `;
@@ -62,4 +64,5 @@ const StyledFigure = styled.figure`
 
 const StyledBtn = styled(Button)`
   margin: 3rem auto;
+  background: transparent;
 `;
