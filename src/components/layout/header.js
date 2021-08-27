@@ -27,7 +27,6 @@ const StyledContainer = styled(Container)`
 
 const StyledHeader = styled.header`
   background: ${theme.light};
-  /* height: 82px; */
   margin: 0 2rem 1rem 2rem;
   position: relative;
   z-index: 999;
