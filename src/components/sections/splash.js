@@ -23,16 +23,14 @@ const Splash = () => {
               <p>Lorem ipsum dolor sit amet, consectetur adiscing elit.</p>
               <p>Facilisis dui lacus mauris eu magna lectus sit ligula.</p>
               {window.innerWidth > 1200
-                ? <Button className='btn'>Zamawiam</Button>
-                : ''
+                && <Button className='btn'>Zamawiam</Button>
               }
             </StyledText>
           </Col>
           {window.innerWidth < 1200
-            ? <StyledBtn xs={{ order: 3 }} lg={0}>
+            && <StyledBtn xs={{ order: 3 }} lg={0}>
                 <Button>Zamawiam</Button>
               </StyledBtn>
-            : ''
           }
         </Row>
       </Container>
