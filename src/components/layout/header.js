@@ -13,10 +13,12 @@ const Header = () => {
         <MainMenu />
       </StyledHeader>
     </StyledContainer>
-  )
-}
+  );
+};
 
 export default Header;
+
+/* STYLE */
 
 const StyledContainer = styled(Container)`
   position: fixed;

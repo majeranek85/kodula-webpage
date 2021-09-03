@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import theme from '../../utils/theme';
-import Section from '../layout/section'
+import Section from '../layout/section';
 
 const TimePriceDetails = () => {
   return (
@@ -11,21 +11,31 @@ const TimePriceDetails = () => {
         <Row>
           <StyledCol md={6}>
             <h2>ILE KOSZTUJE STRONA?</h2>
-            <p>Strona HTML - <span>od 1000zł</span></p>
-            <p>Strona z CMS - <span>od 1600zł</span></p>
+            <p>
+              Strona HTML - <span>od 1000zł</span>
+            </p>
+            <p>
+              Strona z CMS - <span>od 1600zł</span>
+            </p>
           </StyledCol>
           <StyledCol md={6}>
             <h2>JAKI JEST CZAS REALIZACJI?</h2>
-            <p>Strona HTML - <span>do 4 dni</span></p>
-            <p>Strona z CMS - <span>do 7 dni</span></p>
+            <p>
+              Strona HTML - <span>do 4 dni</span>
+            </p>
+            <p>
+              Strona z CMS - <span>do 7 dni</span>
+            </p>
           </StyledCol>
         </Row>
       </Container>
     </Section>
-  )
-}
+  );
+};
 
 export default TimePriceDetails;
+
+/* STYLE */
 
 const StyledCol = styled(Col)`
   h2 {
@@ -40,4 +50,4 @@ const StyledCol = styled(Col)`
       font-weight: 400;
     }
   }
-`
+`;

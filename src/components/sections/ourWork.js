@@ -21,7 +21,7 @@ const data = [
     alt: 'alter',
   },
   {
-    name:'name',
+    name: 'name',
     url: 'http//',
     title: 'title',
     alt: 'alter',
@@ -37,7 +37,7 @@ const OurWork = () => {
           {data.map((item, id) => (
             <Col xs={12} md={4} key={id}>
               <StyledFigure>
-                <img src={item.url} alt={item.alt}/>
+                <img src={item.url} alt={item.alt} />
                 <figcaption>{item.name}</figcaption>
               </StyledFigure>
             </Col>
@@ -46,11 +46,12 @@ const OurWork = () => {
         <StyledBtn>ZOBACZ WIĘCEJ</StyledBtn>
       </Container>
     </Section>
-  )
-}
+  );
+};
 
 export default OurWork;
 
+/* STYLE */
 
 const StyledTitle = styled.h2`
   margin-bottom: 2rem;

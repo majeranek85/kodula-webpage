@@ -39,7 +39,10 @@ const Styleguide = () => {
       <Button> zamawiam </Button>
       <Button light> zamawiam </Button>
       <Button social> f </Button>
-      <Button social light> In </Button>
+      <Button social light>
+        {' '}
+        In{' '}
+      </Button>
 
       <Tabs>
         {services.map((service) => (
@@ -51,6 +54,6 @@ const Styleguide = () => {
       </Tabs>
     </Layout>
   );
-}
+};
 
 export default Styleguide;

@@ -10,7 +10,7 @@ export default Button;
 
 /* BUTTON STYLES */
 
-/* light = props that changes color to light for darker backgrounds */
+/* light = props that change color to light for darker backgrounds */
 
 /* default = outlined, secondary color */
 
@@ -42,6 +42,7 @@ const StyledButton = styled.button`
 
   ${(props) => props.social && social}
 `;
+
 /* Mixins */
 
 const gradient = (color) =>
