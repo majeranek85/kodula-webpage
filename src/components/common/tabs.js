@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import theme from '../../utils/theme';
-import {breakpoints} from '../../utils/breakpoints'
+import { breakpoints } from '../../utils/breakpoints';
 
 const Tabs = ({ children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
@@ -26,12 +26,12 @@ const Tabs = ({ children }) => {
         if (activeTab === one.props.label) {
           return (
             <Container key={one.props.label}>
-              <Content className="tabs__tab-content" >
-                {one.props.children}
-              </Content>
+              <Content className="tabs__tab-content">{one.props.children}</Content>
             </Container>
           );
-        } else {return null}
+        } else {
+          return null;
+        }
       })}
     </StyledTabs>
   );

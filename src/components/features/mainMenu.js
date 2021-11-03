@@ -14,42 +14,42 @@ const menu = [
     label: 'home',
     slug: '/',
     active: 'active',
-    section:'home'
+    section: 'home',
   },
   {
     label: 'oferta',
     slug: '/oferta',
-    section:'services'
+    section: 'services',
   },
   {
     label: 'portfolio',
     slug: '/portfolio',
-    section: 'our-work'
+    section: 'our-work',
   },
   {
     label: 'kontakt',
     slug: '/kontakt',
-    section: 'contact'
+    section: 'contact',
   },
   // {
   //   label: 'styleguide',
   //   slug: '/styleguide',
   //   section: 'styleguide'
   // }
-]
+];
 
 const MainMenu = () => {
   const [menuOpen, toggleMenuOpen] = useState(false);
 
   const toggle = () => {
-    toggleMenuOpen(!menuOpen)
-  }
+    toggleMenuOpen(!menuOpen);
+  };
 
   return (
     <Container fluid>
       <Row>
-        <Col xs={6} lg={3} >
-          <Logo className='logo' />
+        <Col xs={6} lg={3}>
+          <Logo className="logo" />
         </Col>
         <StyledCol xs={6} lg={{ order: 3 }}>
           <StyledHamburger menuOpen={menuOpen} onClick={toggle}>
@@ -64,7 +64,9 @@ const MainMenu = () => {
             <ul>
               {menu.map((item) => (
                 <li key={item.label}>
-                  <Link to={item.section} onClick={toggle} smooth={true} offset={-80} hashSpy spy={true}>{item.label}</Link>
+                  <Link to={item.section} onClick={toggle} smooth={true} offset={-80} hashSpy spy={true}>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -72,10 +74,12 @@ const MainMenu = () => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
 export default MainMenu;
+
+/* STYLE */
 
 const StyledCol = styled(Col)`
   display: flex;
@@ -161,7 +165,7 @@ const StyledHamburger = styled.button`
     :nth-of-type(1),
     :nth-of-type(3) {
       width: 20px;
-      opacity:${({ menuOpen }) => (menuOpen ? `0` : `1`)};
+      opacity: ${({ menuOpen }) => (menuOpen ? `0` : `1`)};
     }
     :nth-of-type(2) {
       transform: ${({ menuOpen }) => (menuOpen ? `rotate(45deg)` : `rotate(0)`)};
