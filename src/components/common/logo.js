@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../utils/breakpoints';
 import { Link, animateScroll as scroll } from 'react-scroll';
-import logo from '../../icons/logo.svg';
+import  LogoSvg  from '../../icons/logo.svg';
 
 const toggleHome = () => {
   scroll.scrollToTop();
@@ -11,7 +11,7 @@ const toggleHome = () => {
 const Logo = ({ ...props }) => (
   <StyledLogo {...props}>
     <Link to="/" onClick={toggleHome}>
-      <img src={logo} alt="logo" />
+      <LogoSvg />
     </Link>
   </StyledLogo>
 );
@@ -23,10 +23,11 @@ export default Logo;
 const StyledLogo = styled.div`
   a {
     cursor: pointer;
+    width: 100%;
 
-    img {
+    svg {
       max-height: 82px;
-      padding-right: 0.6em;
+      //padding-right: 0.6em;
     }
 
     &:hover {
@@ -37,7 +38,7 @@ const StyledLogo = styled.div`
 
   @media ${breakpoints.lg} {
     a {
-      img {
+      svg {
         max-height: 100%;
         width: 100%;
       }
