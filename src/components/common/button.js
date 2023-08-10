@@ -20,7 +20,8 @@ const StyledButton = styled.button`
   font-family: orbitron;
   text-transform: uppercase;
   border-radius: 8px;
-  background: ${(props) => (props.light ? theme.secondary : theme.light)};
+  background: transparent;
+  //background: ${(props) => (props.light ? theme.secondary : theme.light)};
   color: ${(props) => (props.light ? theme.light : theme.secondary)};
   border: 3px solid ${(props) => (props.light ? theme.light : theme.secondary)};
   ${(props) => (props.light ? gradient(theme.light) : gradient(theme.secondary))};
