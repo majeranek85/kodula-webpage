@@ -47,11 +47,11 @@ const MainMenu = () => {
 
   return (
     <Container fluid>
-      <Row>
-        <Col xs={6} lg={3}>
+      <StyledRow>
+        <StyledLogoCol xs={10} lg={3}>
           <Logo className="logo" />
-        </Col>
-        <StyledCol xs={6} lg={{ order: 3 }}>
+        </StyledLogoCol>
+        <StyledCol xs={2} lg={{ order: 3 }}>
           <StyledHamburger menuOpen={menuOpen} onClick={toggle}>
             <span></span>
             <span></span>
@@ -72,7 +72,7 @@ const MainMenu = () => {
             </ul>
           </StyledMenu>
         </Col>
-      </Row>
+      </StyledRow>
     </Container>
   );
 };
@@ -81,15 +81,25 @@ export default MainMenu;
 
 /* STYLE */
 
+const StyledRow = styled(Row)`
+ background: transparent;
+`;
+
+const StyledLogoCol = styled(Col)`
+  background: transparent;
+`;
+
 const StyledCol = styled(Col)`
   display: flex;
   justify-content: flex-end;
+  background: transparent;
 `;
 
 const StyledMenu = styled.nav`
-  background: ${theme.light};
+  backdrop-filter: blur(30px);
   width: 100%;
   padding: 3em;
+  margin-top: 0.5em;
   position: absolute;
   transition: left 600ms ease-in-out, opacity 300ms;
   left: ${({ menuOpen }) => (menuOpen ? `0` : `-100vw`)};
@@ -136,6 +146,8 @@ const StyledMenu = styled.nav`
     display: flex;
     justify-content: flex-end;
     border-bottom: 5px solid ${theme.secondaryLight};
+    background: transparent;
+    backdrop-filter: none;
 
     ul {
       flex-direction: row;
@@ -149,7 +161,7 @@ const StyledMenu = styled.nav`
 `;
 
 const StyledHamburger = styled.button`
-  background: ${theme.light};
+  background: transparent;
   border: none;
   width: 30px;
   height: 77px;

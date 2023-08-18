@@ -23,13 +23,14 @@ export default Header;
 const StyledContainer = styled(Container)`
   position: fixed;
   top: 0;
-  background: white;
+  backdrop-filter: blur(30px);
   z-index: 999;
 `;
 
 const StyledHeader = styled.header`
-  background: ${theme.light};
+  //background: ${theme.light};
   margin: 0 2rem 1rem 2rem;
+  padding: 0.5rem 0 ;
   position: relative;
   z-index: 999;
   border-bottom: 5px solid ${theme.secondaryLight};

@@ -38,8 +38,9 @@ const Splash = () => {
           <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
             <StyledText>
               <h1> TWORZENIE STRON INTERNETOWYCH </h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adiscing elit.</p>
-              <p>Facilisis dui lacus mauris eu magna lectus sit ligula.</p>
+              <p>Szybko.</p>
+              <p>Profesjonalnie.</p>
+              <p>Oryginalnie.</p>
               <StyledBtnDesktop className="btn">Zamawiam</StyledBtnDesktop>
             </StyledText>
           </Col>
@@ -59,7 +60,6 @@ export default Splash;
 const StyledImage = styled.div`
   height: 100%;
   width: 100%;
-  background: lightgray;
   margin: 0 auto;
 
   img {
@@ -101,7 +101,8 @@ const StyledText = styled.div`
 
   p {
     font-family: 'Orbitron';
-    font-size: 1.12rem;
+    font-size: 1.5rem;
+    color: ${theme.primary}
   }
 
   .btn {
@@ -134,6 +135,11 @@ const StyledText = styled.div`
   @media ${breakpoints.xl} {
     h1 {
       font-size: 3.25rem;
+    }
+
+    p {
+      font-size: 2.5rem;
+      color: ${theme.primary}
     }
   }
 `;
